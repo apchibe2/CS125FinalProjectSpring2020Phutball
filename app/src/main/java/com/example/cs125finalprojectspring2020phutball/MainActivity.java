@@ -1,5 +1,6 @@
 package com.example.cs125finalprojectspring2020phutball;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,13 +22,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        loginButton();
+    }
 
-        Button Login = findViewById(R.id.button);
-        Login.setOnClickListener(new View.OnClickListener() {
+    private void loginButton() {
+        Button login = findViewById(R.id.button);
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(MainActivity.this, gameActiviy.class));
             }
         });
     }
