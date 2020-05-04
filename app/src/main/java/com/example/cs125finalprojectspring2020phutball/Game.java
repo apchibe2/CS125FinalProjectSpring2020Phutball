@@ -12,6 +12,10 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
+
 public class Game extends AppCompatActivity {
 
     @Override
@@ -39,10 +43,6 @@ public class Game extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        leaveGameButton();
-    }
-
-    private void leaveGameButton() {
         Button leaveGame = findViewById(R.id.leave_game_button);
         leaveGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,5 +50,8 @@ public class Game extends AppCompatActivity {
                 startActivity(new Intent(Game.this, MainActivity.class));
             }
         });
+
+        // Access a Cloud Firestore instance from your Activity
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
     }
 }
