@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "762651717007",
+    "firebase_url": "https://phutball-d18fd.firebaseio.com",
+    "project_id": "phutball-d18fd",
+    "storage_bucket": "phutball-d18fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762651717007:android:457a2d3fd59e19d288effa",
+        "android_client_info": {
+          "package_name": "com.example.cs125finalprojectspring2020phutball"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762651717007-o2f1rgr8rm9406rstrskjfm87lu5ahrf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cs125finalprojectspring2020phutball",
+            "certificate_hash": "2d379b07b59a86c50ed1928d4cb082af4bb10d4c"
+          }
+        },
+        {
+          "client_id": "762651717007-v94iealhcq10bmals3dr6hp7pcvsc1ec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAa0bjJhM-iwEdxxy5ti1DDrhxZP6Hv6I8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762651717007-v94iealhcq10bmals3dr6hp7pcvsc1ec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
