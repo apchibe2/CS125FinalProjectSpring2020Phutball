@@ -1,17 +1,21 @@
 package com.example.cs125finalprojectspring2020phutball;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.cs125finalprojectspring2020phutball.gamelogic.Tile;
 import com.google.android.material.snackbar.Snackbar;
@@ -32,6 +36,9 @@ public class Game extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         players.child("phutball" + playerCount).setValue(new Tile(8,10, 0));
+
+        //TODO
+        //ConstraintLayout ongoingLayout = findViewById(R.layout.activity_game);
 
         TextView gameState = findViewById(R.id.gamestate_textview);
         ImageView imageView = findViewById(R.id.game_board_imageview);
@@ -67,7 +74,9 @@ public class Game extends AppCompatActivity {
         builder.setTitle("Ent new player coordinates");
         // I'm using fragment here so I'm using getView() to provide ViewGroup
         // but you can provide here any other instance of ViewGroup from your Fragment / Activity
-        View viewInflated = LayoutInflater.from(getApplicationContext()).inflate(findViewById(_____________), false);
+        //TODO
+        // View viewInflated = LayoutInflater.from(getApplicationContext()).inflate(R.layout.chunk_addplayer, , false);
+        //
         // Set up the input
         final EditText xInput = (EditText) viewInflated.findViewById(R.id.xInput);
         final EditText yInput = (EditText) viewInflated.findViewById(R.id.yInput);
@@ -79,7 +88,8 @@ public class Game extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                m_Text = input.getText().toString();
+                players.child("player" + playerCount).setValue(new Tile(Integer.parseInt(xInput.getText().toString()),Integer.parseInt(yInput.getText().toString()), playerCount));
+                playerCount++;
             }
         });
         builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
