@@ -24,7 +24,6 @@ public class Game extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TextView gameState = findViewById(R.id.gamestate_textview);
-        ImageView imageView = findViewById(R.id.game_board_imageview);
         Button movePhutball = findViewById(R.id.move_phutball_button);
         movePhutball.setOnClickListener(new View.OnClickListener() {
             @Override
