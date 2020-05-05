@@ -68,6 +68,7 @@ public class Game extends AppCompatActivity {
         lays.width = grid.getMeasuredWidth() / 15;
         lays.height = grid.getMeasuredHeight() / 20;
         image.setLayoutParams(lays);
+        image.setImageResource(R.drawable.box_image);
         for (int i = 0; i < 300; i++) {
             grid.addView(image, i);
         }
