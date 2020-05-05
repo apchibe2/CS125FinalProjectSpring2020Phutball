@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,7 +35,6 @@ public class Game extends AppCompatActivity {
         players.child("phutball" + playerCount).setValue(new Tile(8,10, 0));
 
         TextView gameState = findViewById(R.id.gamestate_textview);
-        ImageView imageView = findViewById(R.id.game_board_imageview);
         Button movePhutball = findViewById(R.id.move_phutball_button);
         movePhutball.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,35 +60,46 @@ public class Game extends AppCompatActivity {
                 startActivity(new Intent(Game.this, MainActivity.class));
             }
         });
+        GridLayout grid = (GridLayout) findViewById(R.id.gridLayout);
+        grid.setColumnCount(15);
+        grid.setRowCount(20);
+        ImageView image = new ImageView(this);
+        GridLayout.LayoutParams lays = new GridLayout.LayoutParams();
+        lays.width = grid.getMeasuredWidth() / 15;
+        lays.height = grid.getMeasuredHeight() / 20;
+        image.setLayoutParams(lays);
+        for (int i = 0; i < 300; i++) {
+            grid.addView(image, i);
+        }
 
 
         //TODO
-        AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-        builder.setTitle("Ent new player coordinates");
+        //AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+        //builder.setTitle("Ent new player coordinates");
         // I'm using fragment here so I'm using getView() to provide ViewGroup
         // but you can provide here any other instance of ViewGroup from your Fragment / Activity
-        View viewInflated = LayoutInflater.from(getApplicationContext()).inflate(findViewById(_____________), false);
+        //View viewInflated = LayoutInflater.from(getApplicationContext()).inflate(findViewById(_____________), false);
         // Set up the input
-        final EditText xInput = (EditText) viewInflated.findViewById(R.id.xInput);
-        final EditText yInput = (EditText) viewInflated.findViewById(R.id.yInput);
+        //final EditText xInput = (EditText) viewInflated.findViewById(R.id.xInput);
+        //final EditText yInput = (EditText) viewInflated.findViewById(R.id.yInput);
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
-        builder.setView(viewInflated);
+        //builder.setView(viewInflated);
 
         // Set up the buttons
-        builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                m_Text = input.getText().toString();
-            }
-        });
-        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
+        //builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            //@Override
+            //public void onClick(DialogInterface dialog, int which) {
+                //dialog.dismiss();
+                //m_Text = input.getText().toString();
+            //}
+        //});
+        //builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            //@Override
+            //public void onClick(DialogInterface dialog, int which) {
+                //dialog.cancel();
+            //}
+        //});
 
-        builder.show();
+        //builder.show();
     }
 }
