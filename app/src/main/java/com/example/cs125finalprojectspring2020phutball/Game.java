@@ -14,9 +14,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.FirebaseFirestoreSettings;
 
 public class Game extends AppCompatActivity {
 
@@ -51,8 +48,8 @@ public class Game extends AppCompatActivity {
                 startActivity(new Intent(Game.this, MainActivity.class));
             }
         });
-
-        // Access a Cloud Firestore instance from your Activity
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        GridLayout grid = (GridLayout) findViewById(R.id.gridLayout);
+        grid.setColumnCount(15);
+        grid.setRowCount(20);
     }
 }

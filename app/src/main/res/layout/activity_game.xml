@@ -58,14 +58,16 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="409dp"
         android:layout_height="467dp"
-        app:columnCount="15"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintStart_toBottomOf="parent"
-        app:layoyt_constaintStart_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:columnCount="15"
         app:rowCount="20"
+        tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="90dp">
 
     </androidx.gridlayout.widget.GridLayout>
